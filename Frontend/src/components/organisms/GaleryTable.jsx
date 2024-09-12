@@ -107,7 +107,7 @@ const GaleryTable = () => {
                 .map((dataGallery) => (
                   <div key={dataGallery.id} className="md:flex gap-3">
                     <img
-                      src={`http://192.168.0.23:5000/assets/${dataGallery.gambar}`}
+                      src={`http://127.0.0.1:5000/assets/${dataGallery.gambar}`}
                       className="sm:h-52 w-auto object-cover"
                       alt={dataGallery.gambar}
                     />

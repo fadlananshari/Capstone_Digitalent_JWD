@@ -5,6 +5,7 @@ import { MdDelete, MdEdit } from 'react-icons/md';
 import Swal from 'sweetalert2';
 import { toast, ToastContainer } from 'react-toastify';
 import { useDataDeletePaketWisata } from '../../features/useDataDeletePaketWisata';
+import TruncatedText from '../molecules/TruncatedText';
 
 const PaketWisataTable = () => {
   const { dataPaketWisata, isLoading } = useDataAllPaketWisata();
@@ -62,7 +63,7 @@ const PaketWisataTable = () => {
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
-        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <table className="w-full text-sm text-justify rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
@@ -94,14 +95,18 @@ const PaketWisataTable = () => {
                       {index + 1}
                     </th>
                     <td className="px-6 py-4">{data.nama}</td>
-                    <td className="px-6 py-4">{data.deskripsi}</td>
+                    <td className="px-6 py-4 w-96 overflow-hidden">
+                      <TruncatedText text={data.deskripsi} maxLength={100} />
+                    </td>
                     <td className="px-6 py-4">{data.lokasi}</td>
                     <td className="px-6 py-4">
                       {data.foto ? (
-                        <img src={`http://192.168.0.23:5000/assets/${data.foto}`} alt="" className='w-36' />
+                        <img src={`http://127.0.0.1:5000/assets/${data.foto}`} alt="" className="w-36 h-auto object-cover" />
                       ) : (
-                        <button >
-                          <a href={`/admin/paket-wisata/tambah-foto/${data.id}`} className='py-2 px-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg'>Upload</a>
+                        <button>
+                          <a href={`/admin/paket-wisata/tambah-foto/${data.id}`} className="py-2 px-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">
+                            Upload
+                          </a>
                         </button>
                       )}
                     </td>

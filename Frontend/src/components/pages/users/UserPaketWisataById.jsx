@@ -264,7 +264,7 @@ const UserPaketWisataById = ({ isUserLoggedIn }) => {
               </h2>
 
               <div key={index} className="grid lg:grid-flow-col gap-10 mt-10 mb-20">
-                <img src={`http://192.168.0.23:5000/assets/${data.foto}`} className="" alt="" />
+                <img src={`http://127.0.0.1:5000/assets/${data.foto}`} className="" alt="" />
                 <div>
                   <p className="text-justify">{data.deskripsi}</p>
                 </div>
@@ -284,7 +284,7 @@ const UserPaketWisataById = ({ isUserLoggedIn }) => {
             {dataGaleri &&
               dataGaleri.map((data, index) => (
                 <div key={index} className="layout">
-                  <img src={`http://192.168.0.23:5000/assets/${data.gambar}`} alt="" className="" />
+                  <img src={`http://127.0.0.1:5000/assets/${data.gambar}`} alt="" className="" />
                 </div>
               ))}
           </div>

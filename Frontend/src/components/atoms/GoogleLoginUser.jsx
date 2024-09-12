@@ -11,7 +11,7 @@ const GoogleLoginUser = () => {
           headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
         });
 
-        const dataLogin = await axios.post('http://192.168.0.23:5000/api/v1/user/login', {
+        const dataLogin = await axios.post('http://127.0.0.1:5000/api/v1/user/login', {
           name: userInfo.data.name,
           id: userInfo.data.sub,
           email: userInfo.data.email,

@@ -30,5 +30,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server berhasil di running di http://192.168.0.23:${PORT}`);
+  console.log(`Server berhasil di running di http://127.0.0.1:${PORT}`);
 });
